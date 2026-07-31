@@ -499,17 +499,29 @@
     border-bottom:1px solid rgba(74,63,59,0.06);
   }
   .clients .sec-head{margin-bottom:36px;}
+  .client-strip-outer{
+    overflow:hidden;
+    -webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+    mask-image:linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  }
   .client-strip{
-    display:grid;
-    grid-template-columns:repeat(6, 1fr);
+    display:flex;
     gap:20px;
-    align-items:center;
+    width:max-content;
+    animation:marquee 22s linear infinite;
+  }
+  .client-strip:hover{animation-play-state:paused;}
+  @keyframes marquee{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-50%);}
   }
   .client-logo{
     background:var(--white);
     border:1px solid rgba(74,63,59,0.08);
     border-radius:16px;
+    width:170px;
     height:78px;
+    flex-shrink:0;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -519,11 +531,9 @@
     max-width:100%;
     max-height:100%;
     object-fit:contain;
-    filter:grayscale(100%);
-    opacity:0.75;
-    transition:filter 0.25s ease, opacity 0.25s ease;
+    transition:transform 0.25s ease;
   }
-  .client-logo:hover img{filter:grayscale(0%); opacity:1;}
+  .client-logo:hover img{transform:scale(1.05);}
   .client-logo span{
     font-family:var(--mono);
     font-size:10.5px;
@@ -779,7 +789,6 @@
     .process-grid{grid-template-columns:1fr 1fr; row-gap:36px;}
     .process-step::after{display:none;}
     .form-row{grid-template-columns:1fr;}
-    .client-strip{grid-template-columns:repeat(3, 1fr);}
     .gallery-grid{grid-template-columns:1fr 1fr;}
   }
   @media (max-width:560px){
@@ -787,7 +796,6 @@
     .service-grid{grid-template-columns:1fr;}
     .process-grid{grid-template-columns:1fr;}
     .btn{padding:14px 22px; font-size:13px;}
-    .client-strip{grid-template-columns:repeat(2, 1fr);}
     .gallery-grid{grid-template-columns:1fr;}
   }
 
@@ -816,6 +824,7 @@
 
   @media (prefers-reduced-motion: reduce){
     .tag{animation:none;}
+    .client-strip{animation:none;}
     .reveal{transition:none; opacity:1; transform:none;}
   }
 
@@ -1045,13 +1054,21 @@
       <span class="eyebrow">Our Clients</span>
       <h2>Who We Work With</h2>
     </div>
-    <div class="client-strip">
-      <div class="client-logo reveal"><img src="client-01.png" alt="Client logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
-      <div class="client-logo reveal"><img src="client-02.png" alt="Client logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
-      <div class="client-logo reveal"><img src="client-03.png" alt="Client logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
-      <div class="client-logo reveal"><img src="client-04.png" alt="Client logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
-      <div class="client-logo reveal"><img src="client-05.png" alt="Client logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
-      <div class="client-logo reveal"><img src="client-06.png" alt="Client logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
+    <div class="client-strip-outer">
+      <div class="client-strip">
+        <div class="client-logo"><img src="client-01.png" alt="Client logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
+        <div class="client-logo"><img src="client-02.png" alt="Client logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
+        <div class="client-logo"><img src="client-03.png" alt="Client logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
+        <div class="client-logo"><img src="client-04.png" alt="Client logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
+        <div class="client-logo"><img src="client-05.png" alt="Client logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
+        <div class="client-logo"><img src="client-06.png" alt="Client logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
+        <div class="client-logo" aria-hidden="true"><img src="client-01.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
+        <div class="client-logo" aria-hidden="true"><img src="client-02.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
+        <div class="client-logo" aria-hidden="true"><img src="client-03.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
+        <div class="client-logo" aria-hidden="true"><img src="client-04.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
+        <div class="client-logo" aria-hidden="true"><img src="client-05.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
+        <div class="client-logo" aria-hidden="true"><img src="client-06.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
+      </div>
     </div>
   </div>
 </section>
