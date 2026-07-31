@@ -66,11 +66,29 @@
   .reveal{
     opacity:0;
     transform:translateY(24px);
-    transition:opacity 0.7s ease, transform 0.7s ease;
+    transition:opacity 1.2s ease, transform 1.2s ease;
   }
   .reveal.in{
     opacity:1;
     transform:translateY(0);
+  }
+  .reveal-left{
+    opacity:0;
+    transform:translateX(-60px);
+    transition:opacity 1.2s ease, transform 1.2s ease;
+  }
+  .reveal-left.in{
+    opacity:1;
+    transform:translateX(0);
+  }
+  .reveal-right{
+    opacity:0;
+    transform:translateX(60px);
+    transition:opacity 1.2s ease, transform 1.2s ease;
+  }
+  .reveal-right.in{
+    opacity:1;
+    transform:translateX(0);
   }
 
   /* ===== HEADER ===== */
@@ -603,6 +621,101 @@
     margin-top:2px;
   }
 
+  /* ===== SERVICE AREA ===== */
+  .service-area{
+    padding:90px 0;
+    background:var(--cream-2);
+  }
+  .service-area .wrap{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+  }
+  .service-area h2{font-size:clamp(28px,3.4vw,40px); margin-top:12px;}
+  .service-area p{font-size:15.5px; color:var(--dark-2); margin-top:16px; max-width:460px;}
+  .coverage-graphic{
+    display:flex;
+  }
+  .map-frame{
+    width:100%;
+    height:340px;
+    border-radius:22px;
+    overflow:hidden;
+    border:1px solid rgba(74,63,59,0.1);
+    box-shadow:0 20px 40px rgba(74,63,59,0.1);
+  }
+  .map-frame iframe{
+    width:100%;
+    height:100%;
+    border:0;
+    display:block;
+  }
+  .region-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:22px;
+  }
+  .region-tag{
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:var(--dark-2);
+    background:var(--white);
+    border:1px solid rgba(74,63,59,0.1);
+    border-radius:20px;
+    padding:7px 14px;
+  }
+
+  /* ===== CAREERS ===== */
+  .careers{
+    background:var(--dark);
+    color:var(--white);
+    padding:100px 0;
+  }
+  .careers .wrap{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:60px;
+    align-items:center;
+  }
+  .careers .eyebrow{color:var(--blush);}
+  .careers h2{color:var(--white); font-size:clamp(28px,3.4vw,40px); margin-top:12px;}
+  .careers p.lead{color:#E6DED6; margin-top:16px; font-size:15.5px; max-width:460px;}
+  .role-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:26px;
+  }
+  .role-tag{
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:var(--white);
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:20px;
+    padding:8px 16px;
+  }
+  .careers-panel{
+    background:var(--dark-2);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:22px;
+    padding:36px;
+  }
+  .careers-panel h3{
+    font-family:var(--display);
+    font-size:19px;
+    color:var(--white);
+    margin-bottom:12px;
+  }
+  .careers-panel p{
+    font-size:14px;
+    color:#E6DED6;
+    margin-bottom:22px;
+  }
+  .careers-panel .btn-primary{width:100%; justify-content:center;}
+
   /* ===== ABOUT ===== */
   .about{
     padding:110px 0;
@@ -786,6 +899,7 @@
     .hero-tag-wrap{margin-top:40px;}
     .service-grid{grid-template-columns:1fr 1fr;}
     .safety .wrap, .about .wrap, .contact .wrap{grid-template-columns:1fr;}
+    .service-area .wrap, .careers .wrap{grid-template-columns:1fr;}
     .process-grid{grid-template-columns:1fr 1fr; row-gap:36px;}
     .process-step::after{display:none;}
     .form-row{grid-template-columns:1fr;}
@@ -844,6 +958,7 @@
       <a href="#process">Process</a>
       <a href="#gallery">Gallery</a>
       <a href="#about">About</a>
+      <a href="#careers">Careers</a>
       <a href="#contact" class="nav-cta">Request a Quote</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">
@@ -924,7 +1039,7 @@
       <p>From a single-storey renovation to a multi-level commercial site, JDB Group supplies and manages the access and edge protection your crew works off.</p>
     </div>
     <div class="service-grid">
-      <div class="service-tag reveal">
+      <div class="service-tag reveal-left">
         <span class="punch"></span>
         <div class="service-tag-inner">
           <span class="service-num">SERVICE / 01</span>
@@ -940,7 +1055,7 @@
           <p>Larger builds with staged access, loading bays and coordination across trades and site programs.</p>
         </div>
       </div>
-      <div class="service-tag reveal">
+      <div class="service-tag reveal-right">
         <span class="punch"></span>
         <div class="service-tag-inner">
           <span class="service-num">SERVICE / 03</span>
@@ -948,7 +1063,7 @@
           <p>Fall-prevention systems for roof edges, stairwells and open voids, installed to standard.</p>
         </div>
       </div>
-      <div class="service-tag reveal">
+      <div class="service-tag reveal-left">
         <span class="punch"></span>
         <div class="service-tag-inner amber">
           <span class="service-num">SERVICE / 04</span>
@@ -964,7 +1079,7 @@
           <p>Scaffold hire for trades who erect their own — delivered, counted and collected on schedule.</p>
         </div>
       </div>
-      <div class="service-tag reveal">
+      <div class="service-tag reveal-right">
         <span class="punch"></span>
         <div class="service-tag-inner amber">
           <span class="service-num">SERVICE / 06</span>
@@ -1133,6 +1248,50 @@
   </div>
 </section>
 
+<section class="service-area">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow" style="color:var(--clay-dark);">Where we work</span>
+      <h2>Victoria-wide coverage</h2>
+      <p>JDB Group services builders and scaffolding partners right across Victoria — not just Melbourne metro. If your site's in Victoria, we can get there.</p>
+      <div class="region-tags">
+        <span class="region-tag">Melbourne Metro</span>
+        <span class="region-tag">Geelong</span>
+        <span class="region-tag">Ballarat</span>
+        <span class="region-tag">Bendigo</span>
+        <span class="region-tag">Gippsland</span>
+        <span class="region-tag">Regional Victoria</span>
+      </div>
+    </div>
+    <div class="coverage-graphic reveal">
+      <div class="map-frame">
+        <iframe src="https://maps.google.com/maps?q=Victoria,Australia&z=6&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="JDB Group service area — Victoria"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="careers" id="careers">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Join the team</span>
+      <h2>We're hiring</h2>
+      <p class="lead">JDB Group is always open to hearing from experienced scaffolders and site crew looking for steady work across Victoria.</p>
+      <div class="role-tags">
+        <span class="role-tag">Scaffolders</span>
+        <span class="role-tag">Riggers</span>
+        <span class="role-tag">Labourers</span>
+        <span class="role-tag">Site Supervisors</span>
+      </div>
+    </div>
+    <div class="careers-panel reveal">
+      <h3>Apply</h3>
+      <p>Send your resume and ticket/licence details through and we'll get back to you.</p>
+      <a href="mailto:hr@jdbscaffolding.com" class="btn btn-primary">Email hr@jdbscaffolding.com</a>
+    </div>
+  </div>
+</section>
+
 <section class="contact" id="contact">
   <div class="wrap">
     <div class="reveal">
@@ -1216,7 +1375,7 @@
   navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
   navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
-  const revealEls = document.querySelectorAll('.reveal');
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
   }, { threshold: 0.15 });
