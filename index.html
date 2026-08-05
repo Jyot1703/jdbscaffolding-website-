@@ -516,57 +516,6 @@
     color:var(--dark-2);
   }
 
-  /* ===== CLIENT LOGOS ===== */
-  .clients{
-    padding:70px 0;
-    background:var(--cream-2);
-    border-top:1px solid rgba(74,63,59,0.06);
-    border-bottom:1px solid rgba(74,63,59,0.06);
-  }
-  .clients .sec-head{margin-bottom:36px;}
-  .client-strip-outer{
-    overflow:hidden;
-    -webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
-    mask-image:linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
-  }
-  .client-strip{
-    display:flex;
-    gap:20px;
-    width:max-content;
-    animation:marquee 22s linear infinite;
-  }
-  .client-strip:hover{animation-play-state:paused;}
-  @keyframes marquee{
-    0%{transform:translateX(0);}
-    100%{transform:translateX(-50%);}
-  }
-  .client-logo{
-    background:var(--white);
-    border:1px solid rgba(74,63,59,0.08);
-    border-radius:16px;
-    width:170px;
-    height:78px;
-    flex-shrink:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:12px;
-  }
-  .client-logo img{
-    max-width:100%;
-    max-height:100%;
-    object-fit:contain;
-    transition:transform 0.25s ease;
-  }
-  .client-logo:hover img{transform:scale(1.05);}
-  .client-logo span{
-    font-family:var(--mono);
-    font-size:10.5px;
-    color:var(--dark-2);
-    text-align:center;
-    letter-spacing:0.03em;
-  }
-
   /* ===== GALLERY ===== */
   .gallery{
     padding:110px 0;
@@ -960,7 +909,6 @@
 
   @media (prefers-reduced-motion: reduce){
     .tag{animation:none;}
-    .client-strip{animation:none;}
     .reveal{transition:none; opacity:1; transform:none;}
   }
 
@@ -1180,31 +1128,6 @@
         <div class="process-num">04</div>
         <h3>Dismantle &amp; Clear</h3>
         <p>Once the job's done, we strip down and clear the site — no loose ends.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="clients" id="clients">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Our Clients</span>
-      <h2>Who We Work With</h2>
-    </div>
-    <div class="client-strip-outer">
-      <div class="client-strip">
-        <div class="client-logo"><img src="client-01.png" alt="Client logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
-        <div class="client-logo"><img src="client-02.png" alt="Client logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
-        <div class="client-logo"><img src="client-03.png" alt="Client logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
-        <div class="client-logo"><img src="client-04.png" alt="Client logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
-        <div class="client-logo"><img src="client-05.png" alt="Client logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
-        <div class="client-logo"><img src="client-06.png" alt="Client logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
-        <div class="client-logo" aria-hidden="true"><img src="client-01.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
-        <div class="client-logo" aria-hidden="true"><img src="client-02.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
-        <div class="client-logo" aria-hidden="true"><img src="client-03.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
-        <div class="client-logo" aria-hidden="true"><img src="client-04.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
-        <div class="client-logo" aria-hidden="true"><img src="client-05.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
-        <div class="client-logo" aria-hidden="true"><img src="client-06.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span style="display:none;">Add logo</span></div>
       </div>
     </div>
   </div>
